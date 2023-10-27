@@ -1,5 +1,11 @@
-function App() {
-  return <>init </>;
-}
+import { CssBaseline } from "@mui/material";
+import { Routers } from "./routes/Routers";
 
-export default App;
+export const App = () => {
+  return (
+    <>
+      <CssBaseline />
+      <Routers />
+    </>
+  );
+};
