@@ -1,4 +1,4 @@
-import { PageLayout } from "../styles/PageLayout";
+import { PageLayout } from '../styles/PageLayout';
 
 export const TitlePage = () => {
   return (
