@@ -6,6 +6,8 @@ type Props = {
 };
 export const PageLayout: FC<Props> = ({ children }) => {
   return (
-    <Container sx={{ maxWidth: "50vh", height: "100vh" }}>{children}</Container>
+    <Container sx={{ maxWidth: "50vh", height: "100vh", padding: "0px" }}>
+      {children}
+    </Container>
   );
 };
