@@ -4,7 +4,7 @@ import axios from 'axios';
 const settingnum = (props: string) => {
   const code = props;
   const url = `https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=${
-    import.meta.env.APPID
+    import.meta.env.VITE_APPID
   }&jan_code=${code}&results=1`;
   axios
     .get(url)
