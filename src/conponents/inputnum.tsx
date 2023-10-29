@@ -9,7 +9,7 @@ const settingnum = (props: string) => {
   axios
     .get(url)
     .then((results) => {
-      console.log(results.data);
+      console.log(results.data.hits);
     })
     .catch((error) => {
       console.log(error.status);
