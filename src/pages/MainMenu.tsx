@@ -1,5 +1,5 @@
 import { PageLayout } from '../styles/PageLayout';
-export const SelectStagePage = () => {
+export const MainMenu = () => {
   return (
     <PageLayout>
       <>init</>
