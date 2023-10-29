@@ -3,7 +3,7 @@ import { Box, Button } from '@mui/material';
 import titleLogo from '../assets/titleLogo.jpg';
 import { useNavigate } from 'react-router';
 
-export const TitlePage = () => {
+export const Title = () => {
   const navigate = useNavigate();
   return (
     <PageLayout>
@@ -36,7 +36,7 @@ export const TitlePage = () => {
             variant="contained"
             sx={{ width: '80%', height: '60%' }}
             onClick={() => {
-              navigate('/SelectStage');
+              navigate('/MainMenu');
             }}
           >
             スタート
