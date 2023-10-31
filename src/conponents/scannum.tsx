@@ -22,7 +22,7 @@ const Scanner = ({ onReadCode }: ScannerProps) => {
     });
   }, 2000);
 
-  return <video style={{ width: '100%' }} ref={videoRef} />;
+  return <video style={{ width: '10%' }} ref={videoRef} />;
 };
 
 export default Scanner;
