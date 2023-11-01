@@ -4,12 +4,8 @@ import axios from 'axios';
 
 const Scancode = () => {
   const [codes, setCodes] = useState<string[]>([]);
-  const [codename, serCodename] = useState<string[]>([]);
-
-  const codenames = codename.map((array) => {
-    return array;
-  });
-
+  const [codename, setCodename] = useState<string[]>([]);
+  const [codenames, setCodenames] = useState<string[]>([]);
   useEffect(() => {
     codes.map((array) => {
       const url = `https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=${
@@ -19,7 +15,7 @@ const Scancode = () => {
         .get(url)
         .then((results) => {
           console.log(results.data.hits[0].name);
-          serCodename((codename) => Array.from(new Set([...codename, results.data.hits[0].name])));
+          setCodename((codename) => Array.from(new Set([...codename, results.data.hits[0].name])));
         })
         .catch((error) => {
           console.log(error.status);
@@ -27,16 +23,26 @@ const Scancode = () => {
     });
   }, [codes]);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setCodenames(codename);
+  };
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <Scanner
         onReadCode={(result) => {
           setCodes((codes) => Array.from(new Set([...codes, result.getText()])));
         }}
       />
       <textarea defaultValue={codes.join('\n')} />
-      <div>{codenames}</div>
-    </div>
+      <ul>
+        {codenames.map((out, i) => (
+          <li key={i}>{out}</li>
+        ))}
+      </ul>
+      <input type="submit" />
+    </form>
   );
 };
 
