@@ -19,7 +19,7 @@ export const Inputnum = () => {
       .catch((error) => {
         console.log(error.status);
       });
-  }, [num]);
+  }, [num, setCodename]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
