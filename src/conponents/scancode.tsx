@@ -1,3 +1,4 @@
+//バーコードリーダーのコンポーネント
 import { useContext } from 'react';
 import { CodenumberContext, CodenameContext } from '../provider/BR_ContextProviders';
 import Scanner from './scannum';
