@@ -48,7 +48,7 @@ export const ChoiceDungeon: FC<Props> = ({ setSelectAdventure }) => {
               }}
               onClick={() => {
                 setSelectAdventure(item.click);
-                if (item.nav != undefined) {
+                if (item.nav !== undefined) {
                   navigate(item.nav);
                 }
               }}
