@@ -13,6 +13,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.15",
     "@mui/material": "^5.14.15",
     "@zxing/browser": "^0.1.4",
     "@zxing/library": "^0.20.0",
