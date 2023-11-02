@@ -36,7 +36,7 @@ export const BeginnerDungeon = () => {
               <Grid item xs={6} sx={{ width: '100%', height: '100%', position: 'relative' }}>
                 <FightCharacter />
               </Grid>
-              <Grid item xs={6} sx={{ width: '100%', height: '100%' }}></Grid>
+              <Grid item xs={6} sx={{ width: '100%', height: '100%' }} />
             </Grid>
           </Box>
         </Box>
