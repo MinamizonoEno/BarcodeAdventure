@@ -5,6 +5,7 @@ import { ViewCharacterStatus } from '../conponents/Dungeon/ViewCharacterStatus';
 import dungeonBgImg from '../assets/image/backgroundimg/dungeonBgImg.png';
 import { DungeonAppber } from '../conponents/Dungeon/DungeonAppber';
 import { FightCharacter } from '../conponents/Dungeon/FightCharacter';
+import { FightEnemy } from '../conponents/Dungeon/FightEnemy';
 
 export const BeginnerDungeon = () => {
   return (
@@ -36,7 +37,9 @@ export const BeginnerDungeon = () => {
               <Grid item xs={6} sx={{ width: '100%', height: '100%', position: 'relative' }}>
                 <FightCharacter />
               </Grid>
-              <Grid item xs={6} sx={{ width: '100%', height: '100%' }} />
+              <Grid item xs={6} sx={{ width: '100%', height: '100%', position: 'relative' }}>
+                <FightEnemy />
+              </Grid>
             </Grid>
           </Box>
         </Box>

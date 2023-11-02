@@ -10,9 +10,9 @@ export const ChoiceDungeon: FC<Props> = ({ setSelectAdventure }) => {
   const navigate = useNavigate();
   const Level = [
     { title: '初級', click: true, nav: '/BeginnerDungeon', state: false },
-    { title: '中級', click: true, nav: '', state: true },
-    { title: '上級', click: true, nav: '', state: true },
-    { title: '戻る', click: false, nav: '', state: false },
+    { title: '中級', click: true, state: true },
+    { title: '上級', click: true, state: true },
+    { title: '戻る', click: false, state: false },
   ];
   return (
     <>
@@ -48,7 +48,9 @@ export const ChoiceDungeon: FC<Props> = ({ setSelectAdventure }) => {
               }}
               onClick={() => {
                 setSelectAdventure(item.click);
-                navigate(item.nav);
+                if (item.nav !== undefined) {
+                  navigate(item.nav);
+                }
               }}
             >
               <Typography sx={{ fontSize: '2rem' }}>{item.title}</Typography>
