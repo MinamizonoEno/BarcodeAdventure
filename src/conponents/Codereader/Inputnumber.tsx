@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const Inputnum = () => {
   const [num, setNum] = useContext(CodenumberContext);
-  const [_, setCodename] = useContext(CodenameContext);
+  const [, setCodename] = useContext(CodenameContext);
 
   useEffect(() => {
     const url = `https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=${
