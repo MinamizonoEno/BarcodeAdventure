@@ -1,6 +1,6 @@
 import { PageLayout } from '../styles/PageLayout';
 import { Box, Button } from '@mui/material';
-import titleLogo from '../assets/titleLogo.jpg';
+import titleLogo from '../assets/image/logo/titleLogo.jpg';
 import { useNavigate } from 'react-router';
 
 export const Title = () => {
