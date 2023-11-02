@@ -9,7 +9,7 @@ on:
 jobs:
   eslint:
     name: Run eslint scanning #補足情報
-    runs-on: ubuntu-latest #githubのワークフロー上でどの環境を使うか
+    runs-on: ubuntu-22.04 #githubのワークフロー上でどの環境を使うか
     steps:
       - name: Checkout code #コードを持ってくる
         uses: actions/checkout@v3
