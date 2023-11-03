@@ -1,13 +1,13 @@
 import { Box, Grid } from '@mui/material';
-import { PageLayout } from '../styles/PageLayout';
-import { AttackAction } from '../conponents/Dungeon/AttackAction';
-import { ViewCharacterStatus } from '../conponents/Dungeon/ViewCharacterStatus';
-import dungeonBgImg from '../assets/image/backgroundimg/dungeonBgImg.png';
-import { DungeonAppber } from '../conponents/Dungeon/DungeonAppber';
-import { FightCharacter } from '../conponents/Dungeon/FightCharacter';
-import { FightEnemy } from '../conponents/Dungeon/FightEnemy';
+import { PageLayout } from '../../styles/PageLayout';
+import { AttackAction } from '../../conponents/Dungeon/AttackAction';
+import { ViewCharacterStatus } from '../../conponents/Dungeon/CharacterStatus';
+import dungeonBgImg from '../../assets/image/backgroundimg/dungeonBgImg.png';
+import { DungeonAppber } from '../../conponents/Dungeon/DungeonAppber';
+import { FightCharacter } from '../../conponents/Dungeon/FightCharacter';
+import { FightEnemy } from '../../conponents/Dungeon/FightSlime';
 
-export const BeginnerDungeon = () => {
+export const BeginnerDungeon01 = () => {
   return (
     <PageLayout>
       <Box
