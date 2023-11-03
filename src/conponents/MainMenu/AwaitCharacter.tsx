@@ -1,4 +1,4 @@
-import cordchan_fightStart from '../../assets/image/cordchan/cordchan_fightStart.png';
+import cordchan_await01 from '../../assets/image/cordchan/cordchan_await01.png';
 
 export const AwaitCharacter = () => {
   const imgStyle: React.CSSProperties = {
@@ -9,7 +9,7 @@ export const AwaitCharacter = () => {
   };
   return (
     <>
-      <img src={`${cordchan_fightStart}`} alt="Character" style={imgStyle} />
+      <img src={`${cordchan_await01}`} alt="Character" style={imgStyle} />
     </>
   );
 };

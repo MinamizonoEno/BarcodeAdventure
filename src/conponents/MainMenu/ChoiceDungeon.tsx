@@ -9,7 +9,7 @@ type Props = {
 export const ChoiceDungeon: FC<Props> = ({ setSelectAdventure }) => {
   const navigate = useNavigate();
   const Level = [
-    { title: '初級', click: true, nav: '/BeginnerDungeon', state: false },
+    { title: '初級', click: true, nav: '/BeginnerDungeon01', state: false },
     { title: '中級', click: true, state: true },
     { title: '上級', click: true, state: true },
     { title: '戻る', click: false, state: false },

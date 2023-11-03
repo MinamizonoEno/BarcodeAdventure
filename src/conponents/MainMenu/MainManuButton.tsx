@@ -27,7 +27,13 @@ export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
         >
           <Button
             variant="contained"
-            sx={{ backgroundColor: '#C69A67', color: '#ffffff', width: '95%', height: '90%' }}
+            sx={{
+              backgroundColor: '#C69A67',
+              color: '#ffffff',
+              width: '95%',
+              height: '90%',
+              fontSize: '2rem',
+            }}
           >
             装備
           </Button>
@@ -48,7 +54,13 @@ export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
             onClick={() => {
               setSelectAdventure(true);
             }}
-            sx={{ backgroundColor: '#C69A67', color: '#ffffff', width: '95%', height: '90%' }}
+            sx={{
+              backgroundColor: '#C69A67',
+              color: '#ffffff',
+              width: '95%',
+              height: '90%',
+              fontSize: '2rem',
+            }}
           >
             冒険
           </Button>

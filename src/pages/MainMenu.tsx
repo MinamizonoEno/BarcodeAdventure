@@ -5,6 +5,8 @@ import { MenuAppBar } from '../conponents/MainMenu/MenuAppBar';
 import { useState } from 'react';
 import { ChoiceDungeon } from '../conponents/MainMenu/ChoiceDungeon';
 import { AwaitCharacter } from '../conponents/MainMenu/AwaitCharacter';
+import { EquipWeapon } from '../conponents/EquipWeapon';
+import { TalkBox } from '../conponents/MainMenu/TalkBox';
 
 export const MainMenu = () => {
   const [selectAdventure, setSelectAdventure] = useState<boolean>(false);
@@ -12,14 +14,13 @@ export const MainMenu = () => {
     <PageLayout>
       <Box sx={{ width: '100%', height: '100%', backgroundColor: '#E8D7D7' }}>
         <MenuAppBar />
-        <Box sx={{ width: '100%', height: '15%' }} />
+        <TalkBox />
         <Grid container sx={{ width: '100%', height: '28%', spacing: '0' }}>
           <Grid item xs={6}>
             <AwaitCharacter />
-            chara
           </Grid>
           <Grid item xs={6}>
-            buki
+            <EquipWeapon />
           </Grid>
         </Grid>
         <Container sx={{ width: '100%', height: '4%' }} />
