@@ -1,6 +1,15 @@
 import { Box, Button, Container, Typography } from '@mui/material';
+import { FC } from 'react';
 
-export const AttackAction = () => {
+type Props = {
+  setCharacterSerif: React.Dispatch<React.SetStateAction<number>>;
+  setSlimeSerif: React.Dispatch<React.SetStateAction<number>>;
+  Guu: (enemyNum: number) => void;
+  Cyoki: (enemyNum: number) => void;
+  Paa: (enemyNum: number) => void;
+};
+
+export const AttackAction: FC<Props> = ({ setCharacterSerif, setSlimeSerif, Guu, Cyoki, Paa }) => {
   return (
     <>
       <Container
@@ -36,6 +45,13 @@ export const AttackAction = () => {
                 backgroundColor: '#fff',
               },
             }}
+            onClick={async () => {
+              const enemyNum = Math.floor(Math.random() * (5 - 2) + 2);
+              await setCharacterSerif(2);
+              await setSlimeSerif(enemyNum);
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+              Guu(enemyNum);
+            }}
           >
             <Typography sx={{ fontSize: '2rem' }}>グー</Typography>
           </Button>
@@ -54,6 +70,13 @@ export const AttackAction = () => {
                 backgroundColor: '#fff',
               },
             }}
+            onClick={async () => {
+              const enemyNum = Math.floor(Math.random() * (5 - 2) + 2);
+              await setCharacterSerif(3);
+              await setSlimeSerif(enemyNum);
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+              Cyoki(enemyNum);
+            }}
           >
             <Typography sx={{ fontSize: '2rem' }}>チョキ</Typography>
           </Button>
@@ -71,6 +94,13 @@ export const AttackAction = () => {
               ':hover': {
                 backgroundColor: '#fff',
               },
+            }}
+            onClick={async () => {
+              const enemyNum = Math.floor(Math.random() * (5 - 2) + 2);
+              await setCharacterSerif(4);
+              await setSlimeSerif(enemyNum);
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+              Paa(enemyNum);
             }}
           >
             <Typography sx={{ fontSize: '2rem' }}>パー</Typography>

@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from '@mui/material';
 import { useState } from 'react';
 
-export const TalkBox = () => {
+export const MenuSerifBox = () => {
   const Serif: string[] = [
     'こんにちは！',
     '左下のボタンから装備を整えられるよ！',
