@@ -1,4 +1,4 @@
-import Wolf from '../../assets/image/enemy/Wolf.png';
+import Wolf from '../../assets/image/enemy/wolf.png';
 
 export const FightWolf = () => {
   const imgStyle: React.CSSProperties = {
