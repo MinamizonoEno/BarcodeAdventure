@@ -1,11 +1,13 @@
 import { Box, Button, Grid } from '@mui/material';
 import { FC } from 'react';
+import { useNavigate } from 'react-router';
 
 type Props = {
   setSelectAdventure: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
+  const navigate = useNavigate();
   return (
     <Grid
       container
@@ -33,6 +35,9 @@ export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
               width: '95%',
               height: '90%',
               fontSize: '2rem',
+            }}
+            onClick={() => {
+              navigate('/MakeGear01');
             }}
           >
             装備

@@ -1,10 +1,15 @@
 import React, { useContext, useEffect } from 'react';
-import { CodenumberContext, CodenameContext } from '../../provider/ContextProviders';
+import {
+  CodenumberContext,
+  CodenameContext,
+  OnCameraContext,
+} from '../../provider/ContextProviders';
 import axios from 'axios';
 
 export const Inputnum = () => {
   const [num, setNum] = useContext(CodenumberContext);
   const [, setCodename] = useContext(CodenameContext);
+  const [OnCamera, setOnCamera] = useContext(OnCameraContext);
 
   useEffect(() => {
     const url = `https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=${
@@ -14,15 +19,20 @@ export const Inputnum = () => {
       .get(url)
       .then((results) => {
         console.log(results.data.hits[0].name);
-        setCodename(results.data.hits[0].name);
+        if (results.data.hits[0].name == undefined) {
+          setCodename('');
+        } else {
+          setCodename(results.data.hits[0].name);
+        }
       })
       .catch((error) => {
         console.log(error.status);
       });
-  }, [num, setCodename]);
+  }, [OnCamera]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setOnCamera(true);
   };
 
   return (
