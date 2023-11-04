@@ -50,7 +50,7 @@ export const AttackAction: FC<Props> = ({ setCharacterSerif, setSlimeSerif, Guu,
               await setCharacterSerif(2);
               await setSlimeSerif(enemyNum);
               await new Promise((resolve) => setTimeout(resolve, 1000));
-              Guu(enemyNum);
+              await Guu(enemyNum);
             }}
           >
             <Typography sx={{ fontSize: '2rem' }}>グー</Typography>
@@ -75,7 +75,7 @@ export const AttackAction: FC<Props> = ({ setCharacterSerif, setSlimeSerif, Guu,
               await setCharacterSerif(3);
               await setSlimeSerif(enemyNum);
               await new Promise((resolve) => setTimeout(resolve, 1000));
-              Cyoki(enemyNum);
+              await Cyoki(enemyNum);
             }}
           >
             <Typography sx={{ fontSize: '2rem' }}>チョキ</Typography>
@@ -100,7 +100,7 @@ export const AttackAction: FC<Props> = ({ setCharacterSerif, setSlimeSerif, Guu,
               await setCharacterSerif(4);
               await setSlimeSerif(enemyNum);
               await new Promise((resolve) => setTimeout(resolve, 1000));
-              Paa(enemyNum);
+              await Paa(enemyNum);
             }}
           >
             <Typography sx={{ fontSize: '2rem' }}>パー</Typography>

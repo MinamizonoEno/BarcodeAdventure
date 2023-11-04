@@ -11,16 +11,14 @@ import { SerifBox0101 } from '../../conponents/Dungeon/BeginnerDungeon/SerifBox0
 import { FightButton } from '../../conponents/Dungeon/FightButton';
 import { HPBar0101 } from '../../conponents/Dungeon/BeginnerDungeon/HPBar0101';
 import { WinModal } from '../../conponents/Dungeon/BeginnerDungeon/WinModal';
-import { LoseModal } from '../../conponents/Dungeon/BeginnerDungeon/LoseModal';
 
-export const BeginnerDungeon01 = () => {
+export const BeginnerDungeon02 = () => {
   const [slimeHP, setSlimeHP] = useState<number>(100);
   const [characterHP, setCharacterHP] = useState<number>(150);
   const [slimeSerif, setSlimeSerif] = useState<number>(0);
   const [characterSerif, setCharacterSerif] = useState<number>(0);
   const [openAttackMenu, setOpenAttackMenu] = useState(false);
   const [openWinModal, setOpenWinModal] = useState(false);
-  const [openLoseModal, setOpenLoseModal] = useState(false);
 
   const JudgeDead = async (SlimeHP: number, CharacterHP: number) => {
     if (SlimeHP <= 0) {
@@ -30,10 +28,7 @@ export const BeginnerDungeon01 = () => {
       setOpenWinModal(true);
     }
     if (CharacterHP <= 0) {
-      await setCharacterSerif(9);
-      await setSlimeSerif(8);
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setOpenLoseModal(true);
+      null;
     }
   };
 
@@ -117,11 +112,9 @@ export const BeginnerDungeon01 = () => {
           height: '100%',
           backgroundImage: `url(${dungeonBgImg})`,
           backgroundSize: 'cover',
-          position: 'relative',
         }}
       >
         <WinModal openWinModal={openWinModal} />
-        <LoseModal openLoseModal={openLoseModal} />
         <Box sx={{ height: '63%' }}>
           <DungeonAppber />
           <Box sx={{ height: '7%' }} />

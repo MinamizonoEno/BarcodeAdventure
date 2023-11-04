@@ -1,4 +1,4 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { FC } from 'react';
 
 type Props = {
@@ -19,7 +19,7 @@ export const HPBar0101: FC<Props> = ({ characterHP, slimeHP }) => {
         sx={{ height: '100%', width: '100%' }}
       >
         <Grid item xs={6} sx={{ height: '100%', width: '100%' }}>
-          自分HP
+          <Typography sx={{ fontSize: '1rem', color: '#000' }}>コードちゃん</Typography>
           <Box sx={{ height: '90%', width: '100%', padding: '5%' }}>
             <Box
               sx={{
@@ -42,7 +42,12 @@ export const HPBar0101: FC<Props> = ({ characterHP, slimeHP }) => {
           </Box>
         </Grid>
         <Grid item xs={6} sx={{ height: '100%', width: '100%' }}>
-          敵HP
+          <Typography
+            sx={{ fontSize: '1rem', color: '#000', textAlign: 'right', paddingRight: '10%' }}
+          >
+            すらいむ
+          </Typography>
+
           <Box sx={{ height: '90%', width: '100%', padding: '5%' }}>
             <Box
               sx={{
