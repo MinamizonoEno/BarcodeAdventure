@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { CodenumberContext } from '../../provider/ContextProviders';
-import { Scanner } from './Scancode';
+import { Scanner } from './Scanner';
 
 export const Scannum = () => {
   const [, setNum] = useContext(CodenumberContext);
