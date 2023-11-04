@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Box, Grid } from '@mui/material';
 import { PageLayout } from '../../styles/PageLayout';
 import { AttackAction } from '../../conponents/Dungeon/AttackAction';
@@ -6,30 +6,24 @@ import { ViewCharacterStatus } from '../../conponents/Dungeon/CharacterStatus';
 import dungeonBgImg from '../../assets/image/backgroundimg/dungeonBgImg.png';
 import { DungeonAppber } from '../../conponents/Dungeon/DungeonAppber';
 import { FightCharacter } from '../../conponents/Dungeon/FightCharacter';
-import { FightEnemy } from '../../conponents/Dungeon/FightSlime';
-import { SerifBox0101 } from '../../conponents/Dungeon/BeginnerDungeon/SerifBox0101';
+import { FightWolf } from '../../conponents/Dungeon/FightWolf';
+import { SerifBox0102 } from '../../conponents/Dungeon/BeginnerDungeon/SerifBox0102';
 import { FightButton } from '../../conponents/Dungeon/FightButton';
-import { HPBar0101 } from '../../conponents/Dungeon/BeginnerDungeon/HPBar0101';
-import { WinModal0101 } from '../../conponents/Dungeon/BeginnerDungeon/WinModal0101';
+import { HPBar0102 } from '../../conponents/Dungeon/BeginnerDungeon/HPBar0102';
+import { WinModal0102 } from '../../conponents/Dungeon/BeginnerDungeon/WinModal0102';
 import { LoseModal } from '../../conponents/Dungeon/BeginnerDungeon/LoseModal';
-import { TutorialModal } from '../../conponents/Dungeon/BeginnerDungeon/TutorialModal';
 
-export const BeginnerDungeon01 = () => {
-  const [slimeHP, setSlimeHP] = useState<number>(100);
+export const BeginnerDungeon02 = () => {
+  const [enemyHP, setEnemyHP] = useState<number>(150);
   const [characterHP, setCharacterHP] = useState<number>(150);
   const [enemySerifNum, setEnemySerifNum] = useState<number>(0);
   const [characterSerif, setCharacterSerif] = useState<number>(0);
   const [openAttackMenu, setOpenAttackMenu] = useState(false);
   const [openWinModal, setOpenWinModal] = useState(false);
   const [openLoseModal, setOpenLoseModal] = useState(false);
-  const [openTutorialModal, setOpenTutorialModal] = useState(false);
 
-  useEffect(() => {
-    setOpenTutorialModal(true);
-  }, []);
-
-  const JudgeDead = async (SlimeHP: number, CharacterHP: number) => {
-    if (SlimeHP <= 0) {
+  const JudgeDead = async (enemyHP: number, CharacterHP: number) => {
+    if (enemyHP <= 0) {
       await setCharacterSerif(8);
       await setEnemySerifNum(9);
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -56,9 +50,9 @@ export const BeginnerDungeon01 = () => {
         return (
           await setCharacterSerif(6),
           await setEnemySerifNum(7),
-          await setSlimeHP(slimeHP - 35),
+          await setEnemyHP(enemyHP - 30),
           await setOpenAttackMenu(false),
-          JudgeDead(slimeHP - 35, characterHP)
+          JudgeDead(enemyHP - 30, characterHP)
         );
       case 4:
         return (
@@ -66,7 +60,7 @@ export const BeginnerDungeon01 = () => {
           await setEnemySerifNum(6),
           await setCharacterHP(characterHP - 40),
           await setOpenAttackMenu(false),
-          JudgeDead(slimeHP, characterHP - 40)
+          JudgeDead(enemyHP, characterHP - 40)
         );
     }
   };
@@ -78,7 +72,7 @@ export const BeginnerDungeon01 = () => {
           await setEnemySerifNum(6),
           await setCharacterHP(characterHP - 40),
           await setOpenAttackMenu(false),
-          JudgeDead(slimeHP, characterHP - 40)
+          JudgeDead(enemyHP, characterHP - 40)
         );
       case 3:
         return (
@@ -91,9 +85,9 @@ export const BeginnerDungeon01 = () => {
         return (
           await setCharacterSerif(6),
           await setEnemySerifNum(7),
-          await setSlimeHP(slimeHP - 35),
+          await setEnemyHP(enemyHP - 30),
           await setOpenAttackMenu(false),
-          JudgeDead(slimeHP - 35, characterHP)
+          JudgeDead(enemyHP - 30, characterHP)
         );
     }
   };
@@ -103,9 +97,9 @@ export const BeginnerDungeon01 = () => {
         return (
           await setCharacterSerif(6),
           await setEnemySerifNum(7),
-          await setSlimeHP(slimeHP - 35),
+          await setEnemyHP(enemyHP - 30),
           await setOpenAttackMenu(false),
-          JudgeDead(slimeHP - 35, characterHP)
+          JudgeDead(enemyHP - 30, characterHP)
         );
       case 3:
         return (
@@ -113,7 +107,7 @@ export const BeginnerDungeon01 = () => {
           await setEnemySerifNum(6),
           await setCharacterHP(characterHP - 40),
           await setOpenAttackMenu(false),
-          JudgeDead(slimeHP, characterHP - 40)
+          JudgeDead(enemyHP, characterHP - 40)
         );
       case 4:
         return (
@@ -135,17 +129,13 @@ export const BeginnerDungeon01 = () => {
           position: 'relative',
         }}
       >
-        <WinModal0101 openWinModal={openWinModal} />
+        <WinModal0102 openWinModal={openWinModal} />
         <LoseModal openLoseModal={openLoseModal} />
-        <TutorialModal
-          openTutorialModal={openTutorialModal}
-          setOpenTutorialModal={setOpenTutorialModal}
-        />
         <Box sx={{ height: '63%' }}>
           <DungeonAppber />
           <Box sx={{ height: '7%' }} />
-          <HPBar0101 characterHP={characterHP} slimeHP={slimeHP} />
-          <SerifBox0101 enemySerifNum={enemySerifNum} characterSerif={characterSerif} />
+          <HPBar0102 characterHP={characterHP} enemyHP={enemyHP} />
+          <SerifBox0102 ememySerifNum={enemySerifNum} characterSerif={characterSerif} />
           <Box sx={{ height: '40%' }}>
             <Grid
               container
@@ -161,7 +151,7 @@ export const BeginnerDungeon01 = () => {
                 <FightCharacter />
               </Grid>
               <Grid item xs={6} sx={{ width: '100%', height: '100%', position: 'relative' }}>
-                <FightEnemy />
+                <FightWolf />
               </Grid>
             </Grid>
           </Box>
