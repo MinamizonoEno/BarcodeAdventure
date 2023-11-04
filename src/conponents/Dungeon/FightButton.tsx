@@ -4,10 +4,14 @@ import { FC } from 'react';
 type Props = {
   setOpenAttackMenu: React.Dispatch<React.SetStateAction<boolean>>;
   setCharacterSerif: React.Dispatch<React.SetStateAction<number>>;
-  setSlimeSerif: React.Dispatch<React.SetStateAction<number>>;
+  setEnemySerifNum: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export const FightButton: FC<Props> = ({ setOpenAttackMenu, setCharacterSerif, setSlimeSerif }) => {
+export const FightButton: FC<Props> = ({
+  setOpenAttackMenu,
+  setCharacterSerif,
+  setEnemySerifNum,
+}) => {
   return (
     <Container
       sx={{
@@ -38,7 +42,7 @@ export const FightButton: FC<Props> = ({ setOpenAttackMenu, setCharacterSerif, s
           }}
           onClick={() => {
             setCharacterSerif(1);
-            setSlimeSerif(1);
+            setEnemySerifNum(1);
             setOpenAttackMenu(true);
           }}
         >

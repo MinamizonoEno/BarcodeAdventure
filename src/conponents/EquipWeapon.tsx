@@ -9,10 +9,11 @@ import { WeaponTypeContext } from '../provider/ContextProviders';
 
 export const EquipWeapon = () => {
   const [weaponType] = useContext(WeaponTypeContext);
+
   const imgStyle: React.CSSProperties = {
-    width: '50%',
+    width: '70%',
     height: 'auto',
-    marginLeft: '30%',
+    marginLeft: '10%',
     marginRight: '10%',
   };
   return (

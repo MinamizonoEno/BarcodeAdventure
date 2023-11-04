@@ -8,7 +8,7 @@ type Props = {
   openWinModal: boolean;
 };
 
-export const WinModal: FC<Props> = ({ openWinModal }) => {
+export const WinModal0101: FC<Props> = ({ openWinModal }) => {
   const navigate = useNavigate();
 
   return (

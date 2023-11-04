@@ -1,22 +1,22 @@
 import { Box, Grid, Typography } from '@mui/material';
-import { SlimeSerif } from '../../../const/SlimeSerif';
+import { GolemSerif } from '../../../const/GolemSelif';
 import { FC } from 'react';
 
 type Props = {
   characterSerif: number;
-  enemySerifNum: number;
+  ememySerifNum: number;
 };
 
-export const SerifBox0101: FC<Props> = ({ characterSerif, enemySerifNum }) => {
+export const SerifBox0103: FC<Props> = ({ characterSerif, ememySerifNum }) => {
   const CharaSerif: string[] = [
-    'よわそう！',
+    'でけえ！',
     'じゃんけん！',
     'グー！',
     'チョキ！',
     'パー！',
     'あいこで',
-    'やった！',
-    'ぐえ',
+    'よっしゃ！！',
+    'いって！',
     '勝った！！',
     '負けた……',
   ];
@@ -85,7 +85,7 @@ export const SerifBox0101: FC<Props> = ({ characterSerif, enemySerifNum }) => {
               }}
             >
               <Typography sx={{ fontSize: '1.5rem', paddingTop: '5%' }}>
-                {SlimeSerif[enemySerifNum]}
+                {GolemSerif[ememySerifNum]}
               </Typography>
             </Box>
             <Box
