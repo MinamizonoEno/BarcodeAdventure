@@ -1,4 +1,5 @@
 import slime from '../../assets/image/enemy/slime.png';
+
 export const FightEnemy = () => {
   const imgStyle: React.CSSProperties = {
     width: '100%',

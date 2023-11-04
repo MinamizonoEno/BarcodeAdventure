@@ -1,5 +1,7 @@
-import { Box, Button, Grid } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
 import { FC } from 'react';
+import sordIcon from '../../assets/image/logo/sordIcon.png';
+import equipIcon from '../../assets/image/logo/equipIcon.png';
 import { useNavigate } from 'react-router';
 
 type Props = {
@@ -7,6 +9,13 @@ type Props = {
 };
 
 export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
+  const IconStyle: React.CSSProperties = {
+    width: '80%',
+    height: 'auto',
+    position: 'absolute',
+    top: '10%',
+    left: '10%',
+  };
   const navigate = useNavigate();
   return (
     <Grid
@@ -40,7 +49,10 @@ export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
               navigate('/MakeGear01');
             }}
           >
-            装備
+            <img src={`${equipIcon}`} alt="装備してる武器" style={IconStyle} />
+            <Typography sx={{ fontSize: '2rem', position: 'absolute', bottom: '15%' }}>
+              装備
+            </Typography>
           </Button>
         </Box>
       </Grid>
@@ -64,10 +76,13 @@ export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
               color: '#ffffff',
               width: '95%',
               height: '90%',
-              fontSize: '2rem',
+              position: 'relative',
             }}
           >
-            冒険
+            <img src={`${sordIcon}`} alt="剣のアイコン" style={IconStyle} />
+            <Typography sx={{ fontSize: '2rem', position: 'absolute', bottom: '15%' }}>
+              冒険
+            </Typography>
           </Button>
         </Box>
       </Grid>

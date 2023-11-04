@@ -1,24 +1,32 @@
 import { PageLayout } from '../styles/PageLayout';
-import { Box, Button } from '@mui/material';
-import titleLogo from '../assets/image/logo/titleLogo.jpg';
+import { Box, Button, Typography } from '@mui/material';
+import titleLogo from '../assets/image/logo/titleLogo.png';
+import dungeonBgImg from '../assets/image/backgroundimg/dungeonBgImg.png';
+import titleStartButton from '../assets/image/logo/titleStartButton.png';
 import { useNavigate } from 'react-router';
 
 export const Title = () => {
   const navigate = useNavigate();
   return (
     <PageLayout>
-      <Box sx={{ backgroundColor: '#966e82', width: '100%', height: '100%', padding: '0px' }}>
+      <Box
+        sx={{
+          backgroundImage: `url(${dungeonBgImg})`,
+          backgroundSize: 'cover',
+          width: '100%',
+          height: '100%',
+          padding: '0px',
+        }}
+      >
         <Box sx={{ width: '100%', height: '15%' }} />
         <Box
           sx={{
             width: '100%',
             height: '25%',
-            backgroundColor: '#aaa',
             display: 'flex',
             alignItems: 'center',
           }}
         >
-          {/*画像ができ次第変更*/}
           <img src={`${titleLogo}`} alt="test image" width={'100%'} />
         </Box>
         <Box sx={{ width: '100%', height: '20%' }} />
@@ -33,13 +41,19 @@ export const Title = () => {
           }}
         >
           <Button
-            variant="contained"
-            sx={{ width: '80%', height: '60%' }}
+            variant="text"
+            sx={{
+              width: '80%',
+              height: '60%',
+              backgroundImage: `url(${titleStartButton})`,
+              backgroundSize: 'cover',
+              color: 'white',
+            }}
             onClick={() => {
               navigate('/MainMenu');
             }}
           >
-            スタート
+            <Typography sx={{ color: 'fff', fontSize: '1.5rem' }}>スタート</Typography>
           </Button>
         </Box>
         <Box sx={{ width: '100%', height: '20%' }} />
