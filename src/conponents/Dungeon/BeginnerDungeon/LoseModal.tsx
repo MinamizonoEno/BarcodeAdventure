@@ -45,6 +45,7 @@ export const LoseModal: FC<Props> = ({ openLoseModal }) => {
         >
           <img
             src={`${cordchan_Lose}`}
+            alt={'負けたコードちゃん'}
             style={{
               height: '100%',
               width: 'auto',

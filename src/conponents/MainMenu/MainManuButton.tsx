@@ -44,7 +44,7 @@ export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
               position: 'relative',
             }}
           >
-            <img src={`${equipIcon}`} style={IconStyle} />
+            <img src={`${equipIcon}`} alt="装備してる武器" style={IconStyle} />
             <Typography sx={{ fontSize: '2rem', position: 'absolute', bottom: '15%' }}>
               装備
             </Typography>
@@ -74,7 +74,7 @@ export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
               position: 'relative',
             }}
           >
-            <img src={`${sordIcon}`} style={IconStyle} />
+            <img src={`${sordIcon}`} alt="剣のアイコン" style={IconStyle} />
             <Typography sx={{ fontSize: '2rem', position: 'absolute', bottom: '15%' }}>
               冒険
             </Typography>

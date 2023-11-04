@@ -45,6 +45,7 @@ export const WinModal0103: FC<Props> = ({ openWinModal }) => {
         >
           <img
             src={`${cordchan_clear}`}
+            alt="勝ったコードちゃん"
             style={{
               height: '100%',
               width: 'auto',

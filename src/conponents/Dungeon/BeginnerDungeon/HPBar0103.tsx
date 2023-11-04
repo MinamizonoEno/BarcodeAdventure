@@ -32,7 +32,7 @@ export const HPBar0103: FC<Props> = ({ characterHP, enemyHP }) => {
               <Box
                 sx={{
                   height: '100%',
-                  width: String((characterHP / 150) * 100) + '%',
+                  width: ` ${(characterHP / 150) * 100}%`,
                   backgroundColor: '#33FF00',
                   position: 'absolute',
                   left: '0',
@@ -60,7 +60,7 @@ export const HPBar0103: FC<Props> = ({ characterHP, enemyHP }) => {
               <Box
                 sx={{
                   height: '100%',
-                  width: String((enemyHP / 200) * 100) + '%',
+                  width: `${(enemyHP / 200) * 100}%`,
                   backgroundColor: '#33FF00',
                   position: 'absolute',
                   right: '0',
