@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: 'develop' #push時に実行される
+  pull_request:
+    branches: ['main', 'develop'] #PR時に実行される
+
+jobs:
+  eslint:
+    name: Run eslint scanning #補足情報
+    runs-on: ubuntu-latest #githubのワークフロー上でどの環境を使うか
+    steps:
+      - name: Checkout code #コードを持ってくる
+        uses: actions/checkout@v3
+
+      - name: Install ESLint #ワークフローにESLintをインストールする
+        run: |
+          npm install eslint@8.52.0
+          npm install @microsoft/eslint-formatter-sarif@2.1.7
+
+      - name: Build #build test
+        run: npm run build
+
+      - name: Run ESLint #対象ファイルに対しESLintを実行し結果を保存する
+        run: npx eslint ./src --ext .js,.jsx,.ts,.tsx --format @microsoft/eslint-formatter-sarif
+          --output-file eslint-results.sarif
+        continue-on-error: true
+
+      - name: Upload analysis results to GitHub #GitHubにcodeQLから受け取った解析結果をアップロード
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: eslint-results.sarif
+          wait-for-progress: true
+
+  rome:
+    name: Run rome scanning #補足情報
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code #コードを持ってくる
+        uses: actions/checkout@v3
+
+      - name: Install Rome #ワークフローにRomeをインストールする
+        run: |
+          npm install rome@12.0.0\
+
+      - name: Build #build test
+        run: npm run build
+
+      - name: Run Rome #src下のファイルに対し解析と検査
+        run: npx rome check ./src
