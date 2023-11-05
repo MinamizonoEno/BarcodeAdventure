@@ -5,6 +5,7 @@ import {
   RandnumContext,
   WeaponTypeContext,
   WeaponContext,
+  NameContext,
 } from '../../provider/ContextProviders';
 import axios from 'axios';
 import barcodeReader from '../../assets/image/weapon/barcodeReader.png';
@@ -20,21 +21,19 @@ export const Inputnum = () => {
   const [, setWeapon] = useContext(WeaponContext);
   const [, setWeaponType] = useContext(WeaponTypeContext);
   const [randnum, setRandnum] = useContext(RandnumContext);
+  const [Weapon] = useContext(WeaponContext);
+  const [codename] = useContext(CodenameContext);
+  const [, setname] = useContext(NameContext);
 
   const getname = () => {
-    const url = `https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=${
-      import.meta.env.VITE_APPID
-    }&jan_code=${num}&results=1`;
+    const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${num}`;
     axios
       .get(url)
       .then((results) => {
-        console.log(results.data.hits[0].name);
-        if (results.data.hits[0].name === undefined) {
-          setCodename('');
-        } else {
-          setCodename(results.data.hits[0].name);
-          settingWeapon();
-        }
+        console.log(results.data.items[0].volumeInfo.title);
+        setCodename(results.data.items[0].volumeInfo.title);
+        settingWeapon();
+        settingName();
       })
       .catch((error) => {
         console.log(error.status);
@@ -67,6 +66,9 @@ export const Inputnum = () => {
         setWeaponType(branch);
         setWeapon('木の棒');
     }
+  };
+  const settingName = () => {
+    setname(codename.slice(0, 6) + Weapon);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
