@@ -2,6 +2,7 @@ import { Box, Button, Grid, Typography } from '@mui/material';
 import { FC } from 'react';
 import sordIcon from '../../assets/image/logo/sordIcon.png';
 import equipIcon from '../../assets/image/logo/equipIcon.png';
+import { useNavigate } from 'react-router';
 
 type Props = {
   setSelectAdventure: React.Dispatch<React.SetStateAction<boolean>>;
@@ -15,6 +16,7 @@ export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
     top: '10%',
     left: '10%',
   };
+  const navigate = useNavigate();
   return (
     <Grid
       container
@@ -41,7 +43,10 @@ export const MainManuButton: FC<Props> = ({ setSelectAdventure }) => {
               color: '#ffffff',
               width: '95%',
               height: '90%',
-              position: 'relative',
+              fontSize: '2rem',
+            }}
+            onClick={() => {
+              navigate('/MakeGear01');
             }}
           >
             <img src={`${equipIcon}`} alt="装備してる武器" style={IconStyle} />
