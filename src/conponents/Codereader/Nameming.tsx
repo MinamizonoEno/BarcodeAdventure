@@ -9,7 +9,7 @@ export const Nameming = () => {
 
   useEffect(() => {
     setname(codename.slice(0, 6) + Weapon);
-  }, [codename, setname]);
+  }, [Weapon, codename, setname]);
 
   return (
     <Typography
