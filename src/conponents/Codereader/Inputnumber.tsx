@@ -33,6 +33,7 @@ export const Inputnum = () => {
           setCodename('');
         } else {
           setCodename(results.data.hits[0].name);
+          settingWeapon();
         }
       })
       .catch((error) => {
@@ -71,7 +72,6 @@ export const Inputnum = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     getname();
-    settingWeapon();
   };
 
   return (

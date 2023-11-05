@@ -15,7 +15,7 @@ export const Nameming = () => {
     <Typography
       sx={{
         position: 'absolute',
-        left: '30%',
+        left: '25%',
         right: '15%',
         top: '17%',
         fontSize: '1.5rem',

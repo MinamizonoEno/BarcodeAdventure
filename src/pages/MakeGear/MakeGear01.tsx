@@ -24,7 +24,7 @@ export const MakeGear01 = () => {
           <img
             src={WeaponType}
             alt="武器画像"
-            style={{ position: 'absolute', height: '70%', left: '40%', top: '30%' }}
+            style={{ position: 'absolute', height: '65%', left: '40%', top: '35%' }}
           />
           <Nameming />
         </Box>
