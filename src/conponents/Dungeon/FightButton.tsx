@@ -46,7 +46,7 @@ export const FightButton: FC<Props> = ({
             setOpenAttackMenu(true);
           }}
         >
-          <Typography sx={{ fontSize: '2.5rem' }}>ジャンケン</Typography>
+          <Typography sx={{ fontSize: '1.8rem' }}>ジャンケン</Typography>
         </Button>
       </Box>
     </Container>
