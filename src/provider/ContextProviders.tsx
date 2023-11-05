@@ -34,7 +34,7 @@ export const ContextProviders: FC<Props> = ({ children }) => {
   //武器を保持するステート
   const [Weapon, setWeapon] = useState('木の棒');
   //武器の名前を保持するステート
-  const [name, setName] = useState('');
+  const [name, setName] = useState('木の棒');
   //ランダムな数字を保持するステート
   const [randnum, setRandnum] = useState(0);
   // カメラの状態を保持するステート
