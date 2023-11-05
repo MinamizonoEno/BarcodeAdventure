@@ -29,7 +29,7 @@ export const Inputnum = () => {
       .get(url)
       .then((results) => {
         console.log(results.data.hits[0].name);
-        if (results.data.hits[0].name == undefined) {
+        if (results.data.hits[0].name === undefined) {
           setCodename('');
         } else {
           setCodename(results.data.hits[0].name);
