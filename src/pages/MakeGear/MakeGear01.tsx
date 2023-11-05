@@ -1,21 +1,31 @@
 import { PageLayout } from '../../styles/PageLayout';
 import { CodereaderBar } from '../../conponents/Codereader/CodereaderBar';
-import { Box, Grid, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import { Scannum } from '../../conponents/Codereader/Scannumber';
 import { Inputnum } from '../../conponents/Codereader/Inputnumber';
 import { Nameming } from '../../conponents/Codereader/Nameming';
+import { WeaponTypeContext } from '../../provider/ContextProviders';
+import { useContext } from 'react';
 
 export const MakeGear01 = () => {
+  const [WeaponType] = useContext(WeaponTypeContext);
+
   return (
     <PageLayout>
       <Box sx={{ width: '100%', height: '100%', backgroundColor: '#E8D7D7' }}>
         <CodereaderBar />
-        <Grid container sx={{ width: '100%', height: '20%', spacing: '0' }} />
-        <Container sx={{ width: '100%', height: '4%' }} />
-        <Scannum />
-
-        <Box sx={{ width: '100%', height: '30%', backgroundColor: '#A8795F' }}>
+        <Box sx={{ width: '100%', height: '47%', backgroundColor: '#E8D7D7' }}>
+          <Scannum />
+        </Box>
+        <Box
+          sx={{ width: '100%', height: '45%', backgroundColor: '#A8795F', position: 'relative' }}
+        >
           <Inputnum />
+          <img
+            src={WeaponType}
+            alt="武器画像"
+            style={{ position: 'absolute', height: '70%', left: '40%', top: '30%' }}
+          />
           <Nameming />
         </Box>
       </Box>

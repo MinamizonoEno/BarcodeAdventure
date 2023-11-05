@@ -21,5 +21,5 @@ export const Scanner = ({ onReadCode }: ScannerProps) => {
       onReadCode?.(result);
     });
   }, 2000);
-  return <video style={{ width: '100%' }} ref={videoRef} />;
+  return <video style={{ width: '100%', height: '100%' }} ref={videoRef} />;
 };

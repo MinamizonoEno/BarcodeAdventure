@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { CodenameContext, WeaponContext, NameContext } from '../../provider/ContextProviders';
+import { Typography } from '@mui/material';
 
 export const Nameming = () => {
   const [name, setname] = useContext(NameContext);
@@ -10,5 +11,18 @@ export const Nameming = () => {
     setname(codename.slice(0, 6) + Weapon);
   }, [Weapon]);
 
-  return <>{name}</>;
+  return (
+    <Typography
+      sx={{
+        position: 'absolute',
+        left: '30%',
+        right: '15%',
+        top: '17%',
+        fontSize: '1.5rem',
+        color: '#fff',
+      }}
+    >
+      {name}
+    </Typography>
+  );
 };

@@ -75,9 +75,14 @@ export const Inputnum = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" defaultValue={num} onChange={(e) => setNum(e.target.value)} />
-      <input type="submit" />
+    <form onSubmit={handleSubmit} style={{ position: 'absolute', left: '11%', top: '3%' }}>
+      <input
+        type="text"
+        defaultValue={num}
+        onChange={(e) => setNum(e.target.value)}
+        style={{ fontSize: '16px', background: '#fff' }}
+      />
+      <input type="submit" value={'生成'} style={{ fontSize: '13px', background: '#fff' }} />
     </form>
   );
 };
