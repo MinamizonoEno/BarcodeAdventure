@@ -22,19 +22,13 @@ export const Inputnum = () => {
   const [randnum, setRandnum] = useContext(RandnumContext);
 
   const getname = () => {
-    const url = `https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=${
-      import.meta.env.VITE_APPID
-    }&jan_code=${num}&results=1`;
+    const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${num}`;
     axios
       .get(url)
       .then((results) => {
-        console.log(results.data.hits[0].name);
-        if (results.data.hits[0].name === undefined) {
-          setCodename('');
-        } else {
-          setCodename(results.data.hits[0].name);
-          settingWeapon();
-        }
+        console.log(results.data.items[0].volumeInfo.title);
+        setCodename(results.data.items[0].volumeInfo.title);
+        settingWeapon();
       })
       .catch((error) => {
         console.log(error.status);
